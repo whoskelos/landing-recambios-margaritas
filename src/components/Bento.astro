@@ -1,0 +1,50 @@
+---
+import BentoItem from "./BentoItem.astro";
+---
+
+<section
+    class={`
+    w-full max-w-[1400px]
+    grid lg:grid-cols-10 auto-rows-[30rem] gap-4
+    mx-auto p-6 md:p-12 lg:p-20
+  `}
+>
+<!-- TODO: FADE CON TITULO DE CADA TIPO DE PRODUCTO -->
+    <BentoItem class="col-span-10 lg:col-span-4" title={``}>
+        <div
+            slot="image"
+            class="background transition-scale absolute bottom-0 left-0 top-0
+        -z-10 h-full w-full bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110 bg-[url('/filtros.webp')]"
+        >
+        </div>
+
+        <p slot="content" class="max-w-xl text-base md:text-lg"></p>
+    </BentoItem>
+    <BentoItem class="col-span-10 lg:col-span-6" title={``}>
+        <div
+            slot="image"
+            class="background transition-scale absolute bottom-0 left-0 top-0
+    -z-10 h-full w-full bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110 bg-[url('/faros.webp')]"
+        >
+        </div>
+        <p slot="content" class="max-w-xl text-base md:text-lg"></p>
+    </BentoItem>
+    <BentoItem title="" class="col-span-10 lg:col-span-6">
+        <div
+            slot="image"
+            class="background transition-scale absolute bottom-0 left-0 top-0
+        -z-10 h-full w-full bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110 bg-[url('/transmision.webp')]"
+        >
+        </div>
+        <p slot="content" class="max-w-xl text-base md:text-lg"></p>
+    </BentoItem>
+    <BentoItem class="col-span-10 lg:col-span-4" title={``}>
+        <div
+            slot="image"
+            class="background transition-scale absolute bottom-0 left-0 top-0
+        -z-10 h-full w-full bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110 bg-[url('/bombillas.webp')]" 
+        >
+        </div>
+        <p slot="content" class="max-w-xl text-base md:text-lg"></p>
+    </BentoItem>
+</section>

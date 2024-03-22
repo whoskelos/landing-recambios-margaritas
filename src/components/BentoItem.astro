@@ -5,7 +5,7 @@ interface Props {
   subtitle?: string
 }
 
-const { title, subtitle } = Astro.props
+const { title } = Astro.props
 ---
 <article
   class={`
@@ -20,6 +20,7 @@ const { title, subtitle } = Astro.props
 `}
 >
   <div
+    data-title={title}
     class="absolute bottom-0 top-0 z-10 h-full w-full
     bg-gradient-to-b from-transparent from-40% via-[#151836]/50 to-[#151836]/80"
   >
@@ -27,11 +28,10 @@ const { title, subtitle } = Astro.props
 
   <slot name="image" />
 
-  <div
+  <!-- <div
     class="relative z-20 flex h-full select-none flex-col justify-end gap-1 p-4 text-lg md:p-6"
   >
     <h2 class="mb-4 text-balance text-3xl font-semibold uppercase text-white">
-      {title}
     </h2>
 
     {
@@ -43,5 +43,33 @@ const { title, subtitle } = Astro.props
     }
 
     <slot name="content" />
-  </div>
+  </div> -->
 </article>
+
+<style>
+  [data-title]:hover:after {
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out 0.2s;
+      visibility: visible;
+  }
+
+  [data-title]:after {
+      content: attr(data-title);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: .3rem;
+      color: white;
+      text-shadow: 0 0 10px black;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 1000;
+  }
+
+  [data-title] {
+      position: relative;
+  }
+</style>

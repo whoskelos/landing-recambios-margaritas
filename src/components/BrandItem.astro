@@ -1,6 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 interface Props {
-    image: string;
+    image: ImageMetadata;
     alt: string;
 }
 
@@ -8,5 +9,5 @@ const { image, alt } = Astro.props;
 ---
 
 <div class="inline-block h-16 mx-[clamp(3rem,2.5vw,5rem)] aspect-video">
-    <img src={image} alt={alt} class="h-full object-contain">
+    <Image src={image} alt={alt} class="h-full object-contain" />
 </div>

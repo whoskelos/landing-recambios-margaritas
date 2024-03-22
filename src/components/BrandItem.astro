@@ -7,6 +7,6 @@ interface Props {
 const { image, alt } = Astro.props;
 ---
 
-<div class="h-16 mx-10">
+<div class="inline-block h-16 mx-[clamp(3rem,2.5vw,5rem)] aspect-video">
     <img src={image} alt={alt} class="h-full object-contain">
 </div>

@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets"
+import phone from "../assets/logos/phone.webp"
+import whatsapp from "../assets/logos/whatsapp.webp"
+---
+<section class="w-full bg-[#1C3839] dark:bg-[#0e0e0f] p-6 md:p-12 lg:p-20">
+    <h2 class="text-3xl md:text-4xl lg:text-6xl text-white font-semibold uppercase text-center tracking-widest pb-8">Contacto</h2>
+    <div class="w-full flex flex-col md:flex-row gap-x-8">
+        <div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97377.43712611771!2d-3.848893125008988!3d40.2969617717752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4221c850fbc121%3A0x32cd3fd693b32de!2srecambios%20las%20margaritas%20getafe!5e0!3m2!1ses!2ses!4v1711201671374!5m2!1ses!2ses"
+                width="600"
+                height="450"
+                style="border:0;border-radius: 8px;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="w-full px-10 flex flex-col items-center justify-center gap-6">
+            <h3 class="text-white font-medium text-xl">Más información aquí</h3>
+            <article class="w-[250px] h-[80px] bg-slate-100 rounded-md flex justify-around items-center">
+                <!-- TODO: ÍCONO TELÉFONO -->
+                <Image src={phone} alt="Teléfono de contacto" class="w-[40px]" />
+                <!-- TODO: NÚMERO TELÉFONO -->
+                <span class="font-medium text-2xl"><a href="tel:+34919122516" target="_blank">919122516</a></span>
+            </article>
+            <article class="w-[250px] h-[80px] bg-slate-100 rounded-md flex justify-around items-center">
+                <!-- TODO: ÍCONO TELÉFONO -->
+                <Image src={whatsapp} alt="Teléfono de whatsapp" class="w-[40px]" />
+                <!-- TODO: NÚMERO TELÉFONO -->
+                <span class="font-medium text-2xl"><a href="https://wa.me/34632291037" target="_blank">632291037</a></span>
+            </article>
+        </div>
+    </div>
+</section>

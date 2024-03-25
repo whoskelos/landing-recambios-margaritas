@@ -16,7 +16,13 @@ import FacebookIcon from "@icons/facebook.astro";
             C. Cataluña, 36, local 2-1, 28903 Getafe, Madrid
         </p>
         <div class="w-full flex items-center justify-start md:justify-center gap-2 pt-2">
-            <a href="https://wa.me/34632291037" target="_blank">
+            <a 
+                href="https://wa.me/34632291037"
+                target="_blank" 
+                title="Whatsapp" 
+                aria-label="Whatsapp"
+                aria-labelledby="Whatsapp"
+            >
                 <WhatsappIcon
                     size={30}
                     classSvg="text-green-700 dark:text-green-500 hover:text-green-600 dark:hover:text-green-400 aspect-[1/1]"
@@ -25,6 +31,9 @@ import FacebookIcon from "@icons/facebook.astro";
             <a
                 href="https://www.facebook.com/people/Recambios-Coches-Las-Margaritas-Getafe/100084250336953/?sk=about&locale=es"
                 target="_blank"
+                title="Facebook"
+                aria-label="Facebook"
+                aria-labelledby="Facebook"
             >
                 <FacebookIcon size={30} classSvg="text-[#0766FF] hover:text-[#5898ff] aspect-[1/1]" />
             </a>

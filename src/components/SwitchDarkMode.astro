@@ -3,8 +3,14 @@
 ---
 
 <div class="container no-print">
-  <label class="switch">
-    <input type="checkbox" checked/>
+  <label 
+    for="interruptor"
+    class="switch"
+    title="Cambiar el esquema de color de la página"
+
+  >
+    switch
+    <input id="interruptor" name="interruptor" type="checkbox" checked/>
     <span class="slider"></span>
   </label>
 </div>
@@ -21,8 +27,9 @@
     font-size: 12px;
     position: relative;
     display: inline-block;
-    width: 3.5em;
+    width: 3.7em;
     height: 2em;
+    color: transparent;
   }
 
   /* Oculta las configuraciones por defecto */

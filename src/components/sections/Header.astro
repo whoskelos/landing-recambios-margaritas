@@ -1,0 +1,110 @@
+---
+import SwitchDarkMode from "../SwitchDarkMode.astro";
+
+// icons
+import HamburgerMenu from "@icons/hamburger-menu.astro";
+import CloseMenu from "@icons/close-menu.astro";
+---
+
+<header
+  id="header-nav"
+  class="fixed top-0 left-0 w-full bg-transparent z-50 animate-blur-scroll-light dark:animate-blur-scroll-dark"
+>
+  <nav
+    class="w-full max-w-[90%] mx-auto flex justify-between items-center py-6"
+  >
+    <div>
+      <span class="font-bold tracking-wider text-white text-2xl uppercase"
+        ><strong class="text-red-600">Recambios</strong> las Margaritas</span
+      >
+    </div>
+    <div id="hamburger" class="md:hidden">
+      <button
+        id="btn-menu"
+        class="text-white text-2xl"
+        aria-label="Abrir menú"
+        data-action-toggle-menu
+      >
+        <HamburgerMenu size={30} classSvg="text-white" />
+      </button>
+    </div>
+    <div class="menu-mobile hidden md:flex">
+        <div class="flex md:hidden absolute top-6 right-8 z-10">
+            <button
+                id="btn-menu"
+                class="text-white text-2xl"
+                aria-label="Abrir menú"
+                data-action-toggle-menu
+            >
+            <CloseMenu size={30} classSvg="text-black dark:text-white" />
+            </button>
+        </div>
+      <ul
+        class="text-white text-lg font-semibold flex items-center justify-center gap-x-4 [&>li>a]:p-2"
+      >
+        <li data-action-toggle-menu>
+          <a href="#inicio">INICIO</a>
+        </li>
+        <li data-action-toggle-menu>
+          <a href="#productos">PRODUCTOS</a>
+        </li>
+        <li data-action-toggle-menu>
+          <a href="#contacto">CONTACTO</a>
+        </li>
+        <li data-action-toggle-menu>
+          <SwitchDarkMode />
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<style>
+  a:hover {
+    color: rgb(239, 68, 68);
+    transition: color 0.3s;
+  }
+  #header-nav {
+    animation-timeline: scroll();
+    animation-range: 100px;
+  }
+
+  @media screen and (width < 768px) {
+    .menu-mobile {
+      @apply bg-white/70 dark:bg-black/95;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100dvh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .menu-mobile ul {
+      @apply text-black dark:text-white;
+      flex-direction: column;
+      gap: 5rem;
+      height: 100%;
+      z-index: 200;
+      backdrop-filter: blur(30px);
+      font-size: 2rem;
+    }
+  }
+</style>
+
+<script>
+  const btnMenu = document.querySelectorAll('[data-action-toggle-menu]');
+
+    btnMenu.forEach((btn) => {
+    btn.addEventListener('click', toggleMenu);
+    });
+
+    function toggleMenu() {
+        const menuMobile = document.querySelector('.menu-mobile');
+        menuMobile.classList.toggle('hidden');
+    }
+
+</script>

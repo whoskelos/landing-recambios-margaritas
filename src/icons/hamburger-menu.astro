@@ -1,0 +1,20 @@
+---
+interface Props {
+  size: number;
+  classSvg: string;
+}
+
+const { size, classSvg } = Astro.props;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  class:list={classSvg}
+  role="img"
+  aria-label="Icono de menu"
+  ><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"
+  ></path></svg
+>

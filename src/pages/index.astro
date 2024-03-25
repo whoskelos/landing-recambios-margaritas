@@ -1,18 +1,18 @@
 ---
-import Home from "@components/Home.astro";
+import Home from "@components/sections/Home.astro";
 import Layout from "../layouts/Layout.astro";
-import Header from "@components/Header.astro";
-import Products from "@components/Products.astro";
+import Header from "@components/sections/Header.astro";
+import Products from "@components/sections/Products.astro";
 import Brands from "@components/Brands.astro";
-import Contact from "@components/Contact.astro";
+import Contact from "@components/sections/Contact.astro";
 ---
 
 <Layout title="Recambios Las Margaritas">
     <Header />
-    <Home />
-    <Products />
-    <Brands />
-    <Contact />
+    <main id="main" class="overflow-x-hidden overflow-y-auto snap-y snap-proximity">
+        <Home />
+        <Products />
+        <Brands />
+        <Contact />
+    </main>
 </Layout>
-
-<style></style>

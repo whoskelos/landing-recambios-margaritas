@@ -1,0 +1,122 @@
+---
+import { Image } from "astro:assets";
+import phone from "../assets/logos/phone.svg";
+import whatsapp from "../assets/logos/whatsapp.webp";
+import whats from "../assets/logos/whatsapp-logo.svg";
+
+import ContactInfoSection from "@components/ContactInfoSection.astro";
+import ContactInfoLink from "@components/ContactInfoLink.astro";
+
+// Icons
+import WhatsappIcon from "@icons/whatsapp.astro";
+import PhoneIcon from "@icons/phone.astro";
+import LocationIcon from "@icons/location.astro";
+import CalendarIcon from "@icons/calendar.astro";
+---
+
+<section
+  id="contacto"
+  class="flex flex-col items-center w-full h-full min-h-contact bg-[#dce8e9] dark:bg-[#1C3839] p-6 md:p-12 lg:p-20 text-4xl text-dark dark:text-white snap-start"
+>
+  <h2
+    class="text-4xl md:text-5xl lg:text-6xl py-3 font-semibold uppercase text-center tracking-widest"
+  >
+    Contacto
+  </h2>
+  <div
+    class="w-full max-w-[1400px] flex flex-col justify-center gap-20 p-6 md:p-12 lg:p-20 grow"
+  >
+    <div class="contact-info">
+      <!-- Telefonos -->
+      <ContactInfoSection
+        sectionTitle="Llámanos"
+        sectionDescription="Si tienes alguna duda o necesitas información, no dudes en llamarnos o enviarnos un mensaje por WhatsApp"
+      >
+        <ContactInfoLink href="tel:+34919122516" info="919 122 516">
+          <PhoneIcon
+            size={18}
+            classSvg="text-green-700 dark:text-green-500 aspect-[1/1]"
+          />
+        </ContactInfoLink>
+        <ContactInfoLink
+          href="https://wa.me/34632291037"
+          target="_blank"
+          info="632 291 037"
+        >
+          <WhatsappIcon
+            size={17}
+            classSvg="text-green-700 dark:text-green-500 aspect-[1/1]"
+          />
+        </ContactInfoLink>
+      </ContactInfoSection>
+      <!-- Horario -->
+      <ContactInfoSection
+        sectionTitle="Horario"
+        sectionDescription="Estos son nuestros horarios de apertura. Ven a visitarnos cuando quieras."
+      >
+        <div class="w-full flex flex-col gap-1">
+          <ContactInfoLink href="#contact" info="Lunes a Viernes:">
+            <CalendarIcon
+              size={18}
+              classSvg="text-green-700 dark:text-green-500 aspect-[1/1]"
+            />
+          </ContactInfoLink>
+          <span class="font-medium text-base ps-14"
+            ><time>09:00</time>–<time>14:00</time>, <time>16:00</time>–<time
+              >20:00</time
+            ></span
+          >
+          <ContactInfoLink href="#contact" info="Sábado:">
+            <CalendarIcon
+              size={18}
+              classSvg="text-green-700 dark:text-green-500 aspect-[1/1]"
+            />
+          </ContactInfoLink>
+          <span class="font-medium text-base ps-14"
+            ><time>09:00</time>–<time>14:00</time></span
+          >
+          <ContactInfoLink href="#contact" info="Domingo:">
+            <CalendarIcon
+              size={18}
+              classSvg="text-green-700 dark:text-green-500 aspect-[1/1]"
+            />
+          </ContactInfoLink>
+          <span class="font-medium text-base ps-14">Cerrado</span>
+        </div>
+      </ContactInfoSection>
+      <!-- Dirección -->
+      <ContactInfoSection
+        sectionTitle="Visítanos"
+        sectionDescription="Ven a vernos a nuestra tienda en Getafe, Madrid. Estaremos encantados de atenderte."
+      >
+        <ContactInfoLink
+          href="https://maps.app.goo.gl/8EApp6kheDqm4Db27"
+          target="_blank"
+          info="C. Cataluña, 36, local 2-1, 28903 Getafe, Madrid"
+        >
+          <LocationIcon
+            size={18}
+            classSvg="text-green-700 dark:text-green-500 aspect-[1/1]"
+          />
+        </ContactInfoLink>
+      </ContactInfoSection>
+    </div>
+    <div class="w-full grayscale-[50%] hue-rotate-224">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48664.97772983972!2d-3.7545045168208144!3d40.32989712623454!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4221c850fbc121%3A0x32cd3fd693b32de!2srecambios%20las%20margaritas%20getafe!5e0!3m2!1ses!2ses!4v1711316094815!5m2!1ses!2ses"
+        width="100%"
+        height="400"
+        style="border:0;border-radius: 8px;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-info {
+    @apply grid gap-12;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+</style>

@@ -1,0 +1,24 @@
+---
+interface Props {
+  href: string;
+  info: string;
+  target?: string;
+}
+
+const { href, info, target } = Astro.props;
+---
+
+<div class="w-full flex">
+  <a href={href} target={target} class="w-full flex gap-4 items-center px-1">
+    <div
+      class="w-9 h-9 bg-green-500/30 hover:bg-green-500/50 rounded-full p-2 grid place-items-center"
+    >
+      <!-- Icon -->
+      <slot />
+    </div>
+    <span
+      class="text-lg md:text-xl text-green-700 hover:text-green-600 dark:text-green-500 dark:hover:text-green-400 tracking-wide leading-2 pe-2 font-medium text-balance"
+      >{info}</span
+    >
+  </a>
+</div>

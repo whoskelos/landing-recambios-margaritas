@@ -8,6 +8,9 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.1.0
     version: 5.1.0(astro@4.5.6)(tailwindcss@3.4.1)
+  '@fontsource-variable/work-sans':
+    specifier: ^5.0.18
+    version: 5.0.18
   astro:
     specifier: ^4.5.6
     version: 4.5.6
@@ -534,6 +537,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource-variable/work-sans@5.0.18:
+    resolution: {integrity: sha512-g9QIvni8hnIJdS7e2/Ba1pvHBA2HlIfohhAtycV3kw8t4rj7vIu6efJz5Qvh7I+Qy5vCIfog1fylvqsFeCEx+A==}
+    dev: false
 
   /@isaacs/cliui@8.0.2:
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}

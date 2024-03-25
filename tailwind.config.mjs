@@ -25,8 +25,8 @@ export default {
         "blur-scroll-light": {
           to: {
             "box-shadow":
-              "0px 5px 50px -5px rgba(250, 250, 250, 0.1), 0px 5px 50px rgba(250, 250, 250, 0.1)",
-            background: "rgba(250, 250, 250, 0.1)",
+              "0px 5px 50px -5px rgba(0, 0, 0, 0.1), 0px 5px 50px rgba(0, 0, 0, 0.1)",
+            background: "rgba(0, 0, 0, 0.1)",
             "backdrop-filter": "blur(10px)",
           },
         },
@@ -34,6 +34,9 @@ export default {
       minHeight: {
         contact: "calc(100dvh - 179px)",
       },
+      colors: {
+        "green-margaritas": "#00752B",
+      }
     },
   },
   plugins: [],

@@ -4,67 +4,71 @@ import FacebookIcon from "@icons/facebook.astro";
 ---
 
 <footer
-    class="w-full flex flex-col md:flex-row justify-center md:justify-between items-center bg-[#b7cdcf] dark:bg-[#1C3839] p-6 md:p-12 lg:p-20 text-dark dark:text-white gap-4"
+    class="w-full flex flex-col-reverse md:flex-row justify-center md:justify-between items-center bg-[#b7cdcf] dark:bg-[#1C3839] p-6 md:p-12 lg:p-20 text-dark dark:text-white gap-4"
 >
     <div class="w-full">
         <h3
-            class="text-[#1C3839] dark:text-white font-bold tracking-wider text-xl md:text-xl text-center lg:text-2xl uppercase"
+            class="text-[#1C3839] dark:text-white font-bold tracking-wider text-xl md:text-xl text-start md:text-center lg:text-2xl uppercase"
         >
             <strong class="text-red-600">Recambios</strong> las Margaritas
         </h3>
-    </div>
-    <div class="w-full">
-        <div class="w-full flex flex-col items-center justify-between gap-1">
-            <h4
-                class="text-[#1C3839] dark:text-white text-center text-lg md:text-xl font-medium tracking-wide text-balance"
+        <p class="font-light text-sm md:text-base text-balance text-start md:text-center">
+            C. Cataluña, 36, local 2-1, 28903 Getafe, Madrid
+        </p>
+        <div class="w-full flex items-center justify-start md:justify-center gap-2">
+            <a href="https://wa.me/34632291037" target="_blank">
+                <WhatsappIcon
+                    size={30}
+                    classSvg="text-green-700 dark:text-green-500 aspect-[1/1]"
+                />
+            </a>
+            <a
+                href="https://www.facebook.com/people/Recambios-Coches-Las-Margaritas-Getafe/100084250336953/?sk=about&locale=es"
+                target="_blank"
             >
-                Imágenes
-            </h4>
-            <p class="font-light text-sm md:text-base hover:text-[#1C3839]">
+                <FacebookIcon size={34} classSvg="" />
+            </a>
+        </div>
+    </div>
+    <div class="w-full md:grid md:place-content-center">
+        <ul>
+            <span
+                class="text-[#1C3839] dark:text-white text-center text-lg md:text-xl font-bold tracking-wide text-balance"
+                >Navegación</span
+            >
+            <li class="font-light text-sm md:text-base hover:text-[#1C3839]">
+                <a href="#inicio">Inicio</a>
+            </li>
+            <li class="font-light text-sm md:text-base hover:text-[#1C3839]">
+                <a href="#productos">Productos</a>
+            </li>
+            <li class="font-light text-sm md:text-base hover:text-[#1C3839]">
+                <a href="#contacto">Contacto</a>
+            </li>
+        </ul>
+    </div>
+    <div class="w-full md:grid md:place-content-center">
+        <ul>
+            <span
+                class="text-[#1C3839] dark:text-white text-center text-lg md:text-xl font-bold tracking-wide text-balance"
+            >
+                Autores
+            </span>
+            <li class="font-light text-sm md:text-base hover:text-[#1C3839]">
                 <a href="https://www.freepik.es/" target="_blank"
                     >Diseñado por Freepik</a
                 >
-            </p>
-        </div>
-        <div class="w-full flex flex-col items-center justify-between gap-1">
-            <h4
-                class="text-[#1C3839] dark:text-white text-center text-lg md:text-xl font-medium tracking-wide text-balance"
-            >
-                Hecho por
-            </h4>
-            <p class="font-light text-sm md:text-base hover:text-[#1C3839]">
+            </li>
+            <li class="font-light text-sm md:text-base hover:text-[#1C3839]">
                 <a href="https://cv.kelvinguerrero.dev/" target="_blank"
                     >Kelvin Guerrero</a
                 >
-            </p>
-            <p class="font-light text-sm md:text-base hover:text-[#1C3839]">
+            </li>
+            <li class="font-light text-sm md:text-base hover:text-[#1C3839]">
                 <a href="https://cv.mretamozo.com/" target="_blank"
                     >Michael Retamozo</a
                 >
-            </p>
-        </div>
-        <div class="w-full flex flex-col items-center justify-between gap-1">
-            <h4
-                class="text-[#1C3839] dark:text-white text-center text-lg md:text-xl font-medium tracking-wide text-balance"
-            >
-                Encuéntranos
-            </h4>
-            <p class="font-light text-sm md:text-base text-balance text-right">
-                C. Cataluña, 36, local 2-1, 28903 Getafe, Madrid
-            </p>
-        </div>
-    </div>
-    <div class="w-full flex gap-x-3 justify-center items-center">
-        <a href="https://wa.me/34632291037" target="_blank">
-            <WhatsappIcon
-                size={30}
-                classSvg="text-green-700 dark:text-green-500 aspect-[1/1]"
-            />
-        </a>
-        <a
-            href="https://www.facebook.com/people/Recambios-Coches-Las-Margaritas-Getafe/100084250336953/?sk=about&locale=es" target="_blank" 
-        >
-            <FacebookIcon size={34} classSvg="" />
-        </a>
+            </li>
+        </ul>
     </div>
 </footer>

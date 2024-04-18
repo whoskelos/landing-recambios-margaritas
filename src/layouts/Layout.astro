@@ -26,9 +26,37 @@ const { title } = Astro.props;
 		<meta name="author" content="Kelvin Guerrero - Michael Retamozo">
 		<meta property="og:title" content="Recambios las margaritas - Getafe - Tienda de recambios para el automóvil">
 		<meta property="og:description" content="Visita Recambios Las Margaritas en Getafe para encontrar una amplia gama de recambios para automóviles. Desde piezas hasta baterías, aceites y accesorios, tenemos todo lo que necesitas para mantener tu vehículo en perfecto estado. ¡Descubre nuestra tienda en Getafe!. Tel: 919 122 516 - Whatsapp: 632 291 037">
-        <meta property="og:image" content="/recambiosmargaritas.webp" />
+    <meta property="og:image" content="/recambiosmargaritas.webp" />
 		<meta property="og:url" content="https://recambioslasmargaritas.es">
-    	<meta property="og:type" content="website">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "AutoPartsStore",
+        "url": "https://recambioslasmargaritas.es",
+        "name": "Recambios Las Margaritas",
+        "serviceType": "Recambios para automóviles",
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "Getafe"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Calle Cataluña, 36, local 2-1",
+          "addressLocality": "Getafe",
+          "addressRegion": "Madrid",
+          "postalCode": "28903",
+          "addressCountry": "ES"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+34919122516",
+          "contactType": "customer service",
+          "areaServed": "ES",
+          "availableLanguage": ["Spanish"]
+        },
+      }
+      </script>
     <title>{title}</title>
   </head>
   <body class="snap-y snap-proximity">

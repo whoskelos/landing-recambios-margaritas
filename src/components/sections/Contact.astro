@@ -26,13 +26,17 @@ import CalendarIcon from "@icons/calendar.astro";
   <article
     class="w-full max-w-[1400px] flex flex-col justify-center gap-20 p-6 md:p-12 lg:p-20 grow"
   >
-    <address class="contact-info">
+    <div itemscope itemtype="https://schema.org/AutoPartsStore" class="contact-info">
       <!-- Telefonos -->
       <ContactInfoSection
         sectionTitle="Llámanos"
         sectionDescription="Si tienes alguna duda o necesitas información, no dudes en llamarnos o enviarnos un mensaje por WhatsApp"
       >
-        <ContactInfoLink href="tel:+34919122516" info="919 122 516">
+        <ContactInfoLink 
+          href="tel:+34919122516" 
+          info="919 122 516"
+          itempropInfo="telephone"
+        >
           <PhoneIcon
             size={18}
             classSvg="text-green-margaritas dark:text-green-500 aspect-[1/1]"
@@ -42,6 +46,7 @@ import CalendarIcon from "@icons/calendar.astro";
           href="https://wa.me/34632291037"
           target="_blank"
           info="632 291 037"
+          itempropInfo="telephone"
         >
           <WhatsappIcon
             size={17}
@@ -55,25 +60,27 @@ import CalendarIcon from "@icons/calendar.astro";
         sectionDescription="Estos son nuestros horarios de apertura. Ven a visitarnos cuando quieras."
       >
         <div class="w-full flex flex-col gap-1">
-          <ContactInfoLink href="#contact" info="Lunes a Viernes:">
+          <ContactInfoLink href="#contact" info="Lunes a Viernes:" itempropInfoContainer="openingHoursSpecification" itemtype="https://schema.org/OpeningHoursSpecification" itempropInfo="dayOfWeek">
             <CalendarIcon
               size={18}
               classSvg="text-green-margaritas dark:text-green-500 aspect-[1/1]"
             />
           </ContactInfoLink>
-          <span class="font-medium text-base ps-14"
-            ><time>09:00</time>–<time>14:00</time>, <time>16:00</time>–<time
-              >20:00</time
-            ></span
-          >
+          <meta itemprop="openingHours" content="Mo-Fr 09:00-14:00" />
+          <meta itemprop="openingHours" content="Mo-Fr 16:00-20:00" />
+          <span itemprop="openingHoursSpecification" itemscope itemtype="https://schema.org/OpeningHoursSpecification" class="font-medium text-base ps-14">
+            <time itemprop="opens" datetime="09:00:00">09:00</time>–<time itemprop="closes" datetime="14:00:00">14:00</time>,
+            <time itemprop="opens" datetime="16:00:00">16:00</time>–<time itemprop="closes" datetime="20:00:00">20:00</time>
+          </span>
           <ContactInfoLink href="#contact" info="Sábado:">
             <CalendarIcon
               size={18}
               classSvg="text-green-margaritas dark:text-green-500 aspect-[1/1]"
             />
           </ContactInfoLink>
+          <meta itemprop="openingHours" content="Sa 09:00-14:00" />
           <span class="font-medium text-base ps-14"
-            ><time>09:00</time>–<time>14:00</time></span
+            ><time itemprop="opens" datetime="09:00:00">09:00</time>–<time itemprop="closes" datetime="14:00:00">14:00</time></span
           >
           <ContactInfoLink href="#contact" info="Domingo:">
             <CalendarIcon
@@ -88,11 +95,14 @@ import CalendarIcon from "@icons/calendar.astro";
       <ContactInfoSection
         sectionTitle="Visítanos"
         sectionDescription="Ven a vernos a nuestra tienda en Getafe, Madrid. Estaremos encantados de atenderte."
+        itemtype="https://schema.org/PostalAddress"
       >
         <ContactInfoLink
           href="https://maps.app.goo.gl/8EApp6kheDqm4Db27"
           target="_blank"
           info="C. Cataluña, 36, local 2-1, 28903 Getafe, Madrid"
+          itempropInfoContainer="location address"
+          itempropInfo="streetAddress"
         >
           <LocationIcon
             size={18}
@@ -100,7 +110,7 @@ import CalendarIcon from "@icons/calendar.astro";
           />
         </ContactInfoLink>
       </ContactInfoSection>
-    </address>
+    </div>
     <div class="w-full grayscale-[50%] hue-rotate-224">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48664.97772983972!2d-3.7545045168208144!3d40.32989712623454!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4221c850fbc121%3A0x32cd3fd693b32de!2srecambios%20las%20margaritas%20getafe!5e0!3m2!1ses!2ses!4v1711316094815!5m2!1ses!2ses"
@@ -108,7 +118,7 @@ import CalendarIcon from "@icons/calendar.astro";
         height="400"
         style="border:0;border-radius: 8px;"
         allowfullscreen=""
-        loading="lazy"
+        loading="eager"
         title="Mapa de ubicación de Recambios Las Margaritas en Getafe, Madrid"
         referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>

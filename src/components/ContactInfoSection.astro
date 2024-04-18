@@ -2,14 +2,15 @@
 interface Props {
   sectionTitle: string;
   sectionDescription: string;
+  itemtype?: string;
 }
 
-const { sectionTitle, sectionDescription } = Astro.props;
+const { sectionTitle, sectionDescription, itemtype } = Astro.props;
 ---
 
-<div class="section-info flex flex-col gap-3">
+<div itemscope itemtype={itemtype} class="section-info flex flex-col gap-3">
   <h3 class="font-medium text-2xl md:text-3xl tracking-wide">{sectionTitle}</h3>
-  <p class="text-base font-normal text-pretty">
+  <p itemprop="description" class="text-base font-normal text-pretty">
     {sectionDescription}
   </p>
   <slot />

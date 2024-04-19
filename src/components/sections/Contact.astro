@@ -59,10 +59,11 @@ import CalendarIcon from "@icons/calendar.astro";
       <ContactInfoSection
         sectionTitle="Horario"
         sectionDescription="Estos son nuestros horarios de apertura. Ven a visitarnos cuando quieras."
-        itemtype="https://schema.org/Place"
+        itemtype="https://schema.org/OpeningHoursSpecification"
+        itemprop="openingHoursSpecification"
       >
         <div class="w-full flex flex-col gap-1">
-          <ContactInfoLink href="#contact" info="Lunes a Viernes:" itempropInfoContainer="openingHoursSpecification" itemtype="https://schema.org/OpeningHoursSpecification" itempropInfo="dayOfWeek">
+          <ContactInfoLink href="#contact" info="Lunes a Viernes:" itempropInfo="dayOfWeek">
             <CalendarIcon
               size={18}
               classSvg="text-green-margaritas dark:text-green-500 aspect-[1/1]"
@@ -70,7 +71,7 @@ import CalendarIcon from "@icons/calendar.astro";
           </ContactInfoLink>
           <meta itemprop="openingHours" content="Mo-Fr 09:00-14:00" />
           <meta itemprop="openingHours" content="Mo-Fr 16:00-20:00" />
-          <span itemprop="openingHoursSpecification" itemscope itemtype="https://schema.org/OpeningHoursSpecification" class="font-medium text-base ps-14">
+          <span class="font-medium text-base ps-14">
             <time itemprop="opens" datetime="09:00:00">09:00</time>–<time itemprop="closes" datetime="14:00:00">14:00</time>,
             <time itemprop="opens" datetime="16:00:00">16:00</time>–<time itemprop="closes" datetime="20:00:00">20:00</time>
           </span>
